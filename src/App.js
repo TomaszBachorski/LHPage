@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Box from "./components/Box.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+    socials = ['Spotify', 'Facebook', 'Messenger', 'GitHub', 'ChatGPT', 'Newtab'];
+
+
+    render() {
+        return (
+            <div className="App">
+                {this.socials.map((social) => (
+                    <Box name={social} key={social} />
+                ))}
+            </div>
+        );
+    }
 }
 
 export default App;
